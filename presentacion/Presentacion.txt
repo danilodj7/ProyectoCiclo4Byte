@@ -1,0 +1,4 @@
+# ProyectoCiclo4Byte
+Repositorio de Proyecto MisionTic Ciclo 4
+
+1. Santiago Marin Gallego: Ingeniero de Sistemas UTP; conocimiento basicos en programación y los aprendidos y profundizados con MinTic UDEA 
