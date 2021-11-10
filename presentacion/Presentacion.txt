@@ -2,3 +2,10 @@
 Repositorio de Proyecto MisionTic Ciclo 4
 
 1. Santiago Marin Gallego: Ingeniero de Sistemas UTP; conocimiento basicos en programación y los aprendidos y profundizados con MinTic UDEA 
+
+
+
+
+
+3. Danilo Andres Jojoa Abella: Estudiante de Ingenieria de sistemas Ecci; Conocimientos basicos en programacion e infraestructura, con muchas ganas de 
+Aprender progrmacion y enfocarlo en desarrollo web
