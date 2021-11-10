@@ -2,3 +2,5 @@
 Repositorio de Proyecto MisionTic Ciclo 4
 
 1. Santiago Marin Gallego: Ingeniero de Sistemas UTP; conocimiento basicos en programación y los aprendidos y profundizados con MinTic UDEA 
+
+2. Cesar David Saavedra: Estudiante de Ingenieria Industrial, actualmente trabajo en una empresa de servicios temporales donde implemento indicadores, gestiono y analizo grandes cantidades de datos de miles de empleados apoyado en programacion en lenguaje VBA con lo cual surgio la iniciativa y meta de entrar al mundo de la programacion.
