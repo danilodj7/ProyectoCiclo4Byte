@@ -4,7 +4,7 @@ Repositorio de Proyecto MisionTic Ciclo 4
 1. Santiago Marin Gallego: Ingeniero de Sistemas UTP; conocimiento basicos en programación y los aprendidos y profundizados con MinTic UDEA 
 
 
-
+2. Alexis Henao Jaramillo: Estudiante de Desarrollo de Software; Coordinador operativo en la Secretaria de Seguridad de Medellin, con conocimientos en Fibra, Radio Enlaces, Redes y CCTV. 
 
 
 3. Danilo Andres Jojoa Abella: Estudiante de Ingenieria de sistemas Ecci; Conocimientos basicos en programacion e infraestructura, con muchas ganas de 
