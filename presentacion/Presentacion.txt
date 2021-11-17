@@ -8,7 +8,7 @@ Repositorio de Proyecto MisionTic Ciclo 4
 3. Danilo Andres Jojoa Abella: Estudiante de Ingenieria de sistemas Ecci; Conocimientos basicos en programacion e infraestructura, con muchas ganas de 
 Aprender progrmacion y enfocarlo en desarrollo web
 
-4. Cesar David Saavedra: Estudiante de Ingenieria Industrial, actualmente trabajo en una empresa de servicios temporales donde implemento indicadores, gestiono y analizo grandes cantidades de datos de miles de empleados apoyado en programacion en lenguaje VBA con lo cual surgio la iniciativa y meta de entrar al mundo de la programacion.
+4. Cesar David Saavedra: Estudiante de Ingenieria Industrial, actualmente trabajo en una empresa de servicios temporales donde implemento indicadores, gestiono y analizo grandes cantidades de datos de miles de empleados apoyado en programacion en lenguaje VBA con lo cual surgio la iniciativa y meta de entrar al mundo de la programacion..
 
 5. Jorge Alfredo Portela Martinez: Ingeniero Biomedico, Actualmente laborando en la empresa MMSTH, con muchas ganas de avanzar en el mundo de la programacion.
 
