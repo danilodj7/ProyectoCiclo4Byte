@@ -27,10 +27,17 @@ enum Enum_TipoOjectivo {
     ESPECIFICO='ESPECIFICO'
 }
 
+enum Enum_EstadoInscripcion {
+  ACEPTADA = "ACEPTADA",
+  RECHAZADA = "RECHAZADA",
+}
+
+
 export {
   Enum_Rol,
   Enum_EstadoUsuario,
   Enum_EstadosProyecto,
   Enum_FaseProyecto,
   Enum_TipoOjectivo,
+  Enum_EstadoInscripcion,
 };

@@ -4,11 +4,12 @@ import {
   Enum_EstadoUsuario,
   Enum_EstadosProyecto,
   Enum_FaseProyecto,
+  Enum_TipoOjectivo,
 } from "./enums";
 import { ObjectiveModel } from "./objetivo";
 import { UserModel } from "./usuario";
 
-interface Proyect {
+interface Proyecto {
   nombre: string;
   presupuesto: number;
   fechaInicio: Date;
@@ -16,10 +17,10 @@ interface Proyect {
   estado: Enum_EstadosProyecto;
   fase: Enum_FaseProyecto;
   lider: Schema.Types.ObjectId;
-  objectivos: Schema.Types.ObjectId;
+  objectivos: [{ descripcion: String; tipo: Enum_TipoOjectivo }];
 }
 
-const projectSchema = new Schema<Proyect>({
+const projectSchema = new Schema<Proyecto>({
   nombre: {
     type: String,
     required: true,
@@ -49,17 +50,24 @@ const projectSchema = new Schema<Proyect>({
   },
   lider: {
     type: Schema.Types.ObjectId,
-    require: true,
+    required: true,
     ref: UserModel,
   },
   objectivos: [
     {
-      type: Schema.Types.ObjectId,
-      ref: ObjectiveModel,
+      descripcion: {
+        type: String,
+        required: true,
+      },
+      tipo: {
+        type: String,
+        enum: Enum_TipoOjectivo,
+        required:true,
+      }
     },
   ],
 });
 
-const ProjectModel = model("Project", projectSchema);
+const ProjectModel = model("Proyecto", projectSchema);
 
 export { ProjectModel };

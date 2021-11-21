@@ -7,19 +7,42 @@ import { ObjectiveModel } from "./models/objetivo";
 const main = async () => {
   await conectarBD();
 
-  const objective = await ObjectiveModel.create({
-    descripcion: "Este es el objetivo especifico",
-    tipo: Enum_TipoOjectivo.ESPECIFICO,
+  // const objective = await ObjectiveModel.create({
+  //   descripcion: "Este es el objetivo especifico",
+  //   tipo: Enum_TipoOjectivo.ESPECIFICO,
+  // });
+
+  // const CrearProyectoConObjetivos = await ProjectModel.create({
+  //   nombre: "Proyecto ByeByeByte",
+  //   presupuesto: 0,
+  //   fechaInicio: Date.now(),
+  //   fechaFin: new Date("2021/12/14"),
+  //   lider: "6199aa33a0bba8df08855636",
+  //   objectivos: [
+  //     {
+  //       descripcion: "este es el objetivo general ",
+  //       tipo: Enum_TipoOjectivo.GENERAL,
+  //     },
+  //     {
+  //       descripcion: "este es el objetivo especifico 1 ",
+  //       tipo: Enum_TipoOjectivo.ESPECIFICO,
+  //     },
+  //     {
+  //       descripcion: "este es el objetivo especifico 2 ",
+  //       tipo: Enum_TipoOjectivo.ESPECIFICO,
+  //     },
+  //   ],
+  // });
+
+  const proyectoCreado = await ProjectModel.find({
+    _id: "619a960bb49d5ccbb6859c03",
   });
 
-  ProjectModel.create({
-    nombre: "Proyecto 3",
-    presupuesto: 200,
-    fechaInicio: Date.now(),
-    fechaFin: new Date("2021/12/14"),
-    lider: "6199aa33a0bba8df08855636",
-    objectivos:['6199ee5a765180e7b5ac5e34','6199eea11399034b41f4e6f3'],
-  });
+  console.log(proyectoCreado);
+
+
+
+
   // const proyecto = await ProjectModel.find({ nombre: "Proyecto 2" }).populate(
   //   "lider"
   // );
