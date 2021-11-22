@@ -17,14 +17,14 @@ enum Enum_EstadosProyecto {
 
 enum Enum_FaseProyecto {
   INICIADO = "INICIADO",
-  DESARROLLO = "EN DESARROLLO",
+  EN_DESARROLLO = "EN_DESARROLLO",
   TERMINADO = "TERMINADO",
     NULA = "",
 }
 
 enum Enum_TipoOjectivo {
     GENERAL = "GENERAL",
-    ESPECIFICO='ESPECIFICO'
+    ESPECIFICO='ESPECIFICO',
 }
 
 enum Enum_EstadoInscripcion {
