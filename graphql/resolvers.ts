@@ -31,7 +31,7 @@ const resolvers = {
         usuarioCreado.estado = args.estado;
       }
 
-      console.log("Se ejecuto la mutacion crear usuario");
+      console.log("Se ejecuto la mutacion Crear Usuario");
       return usuarioCreado;
     },
 
