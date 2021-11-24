@@ -8,6 +8,14 @@ const resolversAvance = {
         .populate("creadoPor");
       return avances;
     },
+    filtrarAvance: async (parent, args) => {
+      const avanceFiltrado = await ModeloAvance.find({
+        IdProyecto: args.idProyecto,
+      })
+        .populate("proyecto")
+        .populate("creadoPor");
+      return avanceFiltrado;
+    },
   },
   Mutation: {
     crearAvance: async (parent, args) => {
