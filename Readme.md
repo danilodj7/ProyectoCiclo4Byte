@@ -1,4 +1,4 @@
-# Proyecto Bye Bye Bites
+# Proyecto Bye Bye Bite
     
     Se busca realizar un proyecto dentro de las especificaciones dadas por MisionTIC con base en lo enseñado por los docentes asignados.
 
