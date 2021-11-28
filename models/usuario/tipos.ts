@@ -12,8 +12,6 @@ const tiposUsuario = gql`
     rol: Enum_Rol!
   }
 
-
-
   type Query {
     Usuarios: [Usuario]
     Usuario(_id: String): Usuario
