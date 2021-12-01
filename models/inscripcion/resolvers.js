@@ -24,7 +24,8 @@ const resolversIncripciones = {
         {
           estado: args.estado,
           fechaIngreso: Date.now(),
-        }
+        },
+        { new: true }
       );
       return inscripcionAprobada;
     },

@@ -32,14 +32,18 @@ const resolversUsuario = {
     },
 
     editarUsuario: async (parent, args) => {
-      const usuarioEditado = await UserModel.findByIdAndUpdate(args._id, {
-        nombre: args.nombre,
-        apellido: args.apellido,
-        correo: args.correo,
-        identificacion: args.identificacion,
-        rol: args.rol,
-        estado: args.estado,
-      });
+      const usuarioEditado = await UserModel.findByIdAndUpdate(
+        args._id,
+        {
+          nombre: args.nombre,
+          apellido: args.apellido,
+          correo: args.correo,
+          identificacion: args.identificacion,
+          rol: args.rol,
+          estado: args.estado,
+        },
+        { new: true }
+      );
       return usuarioEditado;
     },
 
