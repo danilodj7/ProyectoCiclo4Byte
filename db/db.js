@@ -1,8 +1,8 @@
-// import mongoose from "mongoose";
-import { connect } from "mongoose";
+import mongoose from "mongoose";
 
 const conectarBD = async () => {
-  return await connect(process.env.DATEBASE_URL)
+  return await mongoose
+    .connect(process.env.DATEBASE_URL)
     .then(() => {
       console.log("Conexion Exitosa");
     })

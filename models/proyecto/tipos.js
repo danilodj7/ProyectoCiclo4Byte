@@ -2,6 +2,24 @@ import { gql } from "apollo-server-core";
 
 const tiposProyecto = gql`
 
+  type Proyecto {
+    _id: ID!
+    nombre: String!
+    presupuesto: Float
+    fechaInicio: Date!
+    fechaFin: Date!
+    estado: Enum_EstadosProyecto!
+    fase: Enum_FaseProyecto!
+    lider: Usuario!
+    objectivos: [Objetivo]!
+    avances:[Avance]
+    inscripciones:[Inscripcion]
+  }
+
+  type Query {
+    Proyectos: [Proyecto]
+  }
+
   type Objetivo {
     _id: ID!
     descripcion: String!
@@ -14,24 +32,7 @@ const tiposProyecto = gql`
     tipo: Enum_TipoOjectivo!
   }
 
-  type Proyecto {
-    _id: ID!
-    nombre: String!
-    presupuesto: Float
-    fechaInicio: Date!
-    fechaFin: Date!
-    estado: Enum_EstadosProyecto!
-    fase: Enum_FaseProyecto!
-    lider: Usuario
-    objectivos: [Objetivo]!
-  }
-
-  type Query {
-    Proyectos: [Proyecto]
-  }
-
   type Mutation {
-  
     crearProyecto(
       nombre: String!
       presupuesto: Float

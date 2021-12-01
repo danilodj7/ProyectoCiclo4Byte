@@ -1,10 +1,11 @@
-
-import { UserModel } from "./usuario";
+import { UserModel } from "./usuario.js";
 
 const resolversUsuario = {
   Query: {
     Usuarios: async (parent, args) => {
-      const usuarios = await UserModel.find();
+      const usuarios = await UserModel.find()
+        .populate("avances")
+        .populate("inscripciones");
       return usuarios;
     },
 
@@ -12,7 +13,6 @@ const resolversUsuario = {
       const usuario = await UserModel.findOne({ _id: args._id });
       return usuario;
     },
-
   },
   Mutation: {
     crearUsuario: async (parent, args) => {
