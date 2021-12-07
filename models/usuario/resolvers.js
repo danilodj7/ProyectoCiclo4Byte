@@ -39,7 +39,6 @@ const resolversUsuario = {
           apellido: args.apellido,
           correo: args.correo,
           identificacion: args.identificacion,
-          rol: args.rol,
           estado: args.estado,
         },
         { new: true }

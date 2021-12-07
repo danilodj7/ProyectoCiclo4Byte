@@ -22,8 +22,14 @@ const userSchema = new Schema(
         validator: (email) => {
           return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
         },
+        message: "Error en el formato del correo",
       },
     },
+    password: {
+      type: String,
+      required: true,
+    },
+
     identificacion: {
       type: String,
       required: true,
@@ -64,11 +70,6 @@ userSchema.virtual("inscripciones", {
   localField: "_id",
   foreignField: "estudiante",
 });
-
-
-
-
-
 
 const UserModel = model("Usuario", userSchema);
 
