@@ -27,7 +27,7 @@ const tiposEnums = gql`
     NULA
   }
 
-  enum Enum_TipoOjectivo {
+  enum Enum_TipoObjetivo {
     GENERAL
     ESPECIFICO
   }

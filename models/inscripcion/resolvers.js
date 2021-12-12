@@ -2,9 +2,17 @@ import { InscriptionModel } from "./inscripcion.js";
 
 const resolversIncripciones = {
   Query: {
-    Inscripciones: async (parent, args) => {
-      const inscripciones = await InscriptionModel.find().populate('estudiante')
+    Inscripciones: async (parent, args, context) => {
+      const inscripciones = await InscriptionModel.find().populate(
+        "estudiante"
+      );
       return inscripciones;
+    },
+
+    InscripcionesPendientesAprobar: async (parent, args, context) => {
+      const inscrionesPendientes = await InscriptionModel.find({
+        estado: "PENDIENTE",
+      }).populate("estudiante");
     },
   },
 

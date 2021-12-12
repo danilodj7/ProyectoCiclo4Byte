@@ -54,7 +54,7 @@ const projectSchema = new Schema(
       required: true,
       ref: UserModel,
     },
-    objectivos: [
+    objetivos: [
       {
         descripcion: {
           type: String,

@@ -16,7 +16,12 @@ type Token {
       estado: Enum_EstadoUsuario
       rol: Enum_Rol!
     ): Token!
-  } 
+    
+    login (correo: String!, password:String!): Token
+
+    refreshToken:Token
+
+  }
 `;
 
 export { tiposAutenticacion };
