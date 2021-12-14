@@ -5,8 +5,10 @@ import { generateToken } from "../../utils/tokenUtils.js";
 const resolversAutenticacion = {
   Mutation: {
     registro: async (parent, args) => {
+      // HASH para el password
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(args.password, salt);
+
       const usuarioCreado = await UserModel.create({
         nombre: args.nombre,
         apellido: args.apellido,
@@ -24,6 +26,7 @@ const resolversAutenticacion = {
           identificacion: usuarioCreado.identificacion,
           correo: usuarioCreado.correo,
           rol: usuarioCreado.rol,
+          estado: usuarioCreado.estado,
         }),
       };
     },
@@ -39,6 +42,7 @@ const resolversAutenticacion = {
             identificacion: usuarioEcontrado.identificacion,
             correo: usuarioEcontrado.correo,
             rol: usuarioEcontrado.rol,
+            estado: usuarioEcontrado.estado,
           }),
         };
       }
@@ -59,6 +63,7 @@ const resolversAutenticacion = {
             identificacion: context.userData.identificacion,
             correo: context.userData.correo,
             rol: context.userData.rol,
+            estado: context.userData.estado,
           }),
         };
       }

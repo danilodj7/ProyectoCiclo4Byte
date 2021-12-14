@@ -2,6 +2,11 @@ import { UserModel } from "./usuario.js";
 
 const resolversUsuario = {
   Query: {
+    UsuarioPerfil: async (parent, args, context) => {
+      const usuarioPerfil = await UserModel.find({ _id: context.userData._id });
+      return usuarioPerfil;
+    },
+
     Usuarios: async (parent, args, context) => {
       console.log("context ", context);
       if (context.userData.rol === "LIDER") {
@@ -50,6 +55,7 @@ const resolversUsuario = {
     },
 
     Usuario: async (parent, args) => {
+      console.log("args", args);
       const usuario = await UserModel.findOne({ _id: args._id });
       return usuario;
     },
@@ -69,6 +75,20 @@ const resolversUsuario = {
 
       console.log("Se ejecuto la mutacion Crear Usuario");
       return usuarioCreado;
+    },
+
+    editarPerfil: async (parent, args) => {
+      const perfilEditado = await UserModel.findByIdAndUpdate(
+        args._id,
+        {
+          nombre: args.nombre,
+          apellido: args.apellido,
+          correo: args.correo,
+          identificacion: args.identificacion,
+        },
+        { new: true }
+      );
+      return perfilEditado;
     },
 
     editarUsuario: async (parent, args) => {

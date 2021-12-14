@@ -1,7 +1,6 @@
 import { gql } from "apollo-server-core";
 
 const tiposUsuario = gql`
-  
   type Usuario {
     _id: ID!
     nombre: String!
@@ -10,14 +9,15 @@ const tiposUsuario = gql`
     correo: String!
     estado: Enum_EstadoUsuario!
     rol: Enum_Rol!
-    avances:[Avance]
-    inscripciones:[Inscripcion]
-    proyectosLiderados:[Proyecto]
+    avances: [Avance]
+    inscripciones: [Inscripcion]
+    proyectosLiderados: [Proyecto]
   }
 
   type Query {
     Usuarios: [Usuario]
     Usuario(_id: String): Usuario
+    UsuarioPerfil: [Usuario]
   }
 
   type Mutation {
@@ -38,6 +38,14 @@ const tiposUsuario = gql`
       identificacion: String!
       correo: String!
       estado: Enum_EstadoUsuario
+    ): Usuario
+
+    editarPerfil(
+      _id: String!
+      nombre: String!
+      apellido: String!
+      identificacion: String!
+      correo: String!
     ): Usuario
 
     eliminarUsuario(_id: String, correo: String): Usuario
