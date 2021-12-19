@@ -1,36 +1,53 @@
+import { ProjectModel } from "../proyecto/proyecto.js";
+import { UserModel } from "../usuario/usuario.js";
 import { InscriptionModel } from "./inscripcion.js";
 
-const resolversIncripciones = {
+const resolverInscripciones = {
+  Inscripcion: {
+    proyecto: async (parent, args, context) => {
+      return await ProjectModel.findOne({ _id: parent.proyecto });
+    },
+    estudiante: async (parent, args, context) => {
+      return await UserModel.findOne({ _id: parent.estudiante });
+    },
+  },
   Query: {
     Inscripciones: async (parent, args, context) => {
-      const inscripciones = await InscriptionModel.find().populate(
-        "estudiante"
-      );
+      let filtro = {};
+      if (context.userData) {
+        if (context.userData.rol === "LIDER") {
+          const projects = await ProjectModel.find({
+            lider: context.userData._id,
+          });
+          const projectList = projects.map((p) => p._id.toString());
+          filtro = {
+            proyecto: {
+              $in: projectList,
+            },
+          };
+        }
+      }
+      const inscripciones = await InscriptionModel.find({ ...filtro });
       return inscripciones;
     },
 
-    InscripcionesPendientesAprobar: async (parent, args, context) => {
-      const inscrionesPendientes = await InscriptionModel.find({
-        estado: "PENDIENTE",
-      }).populate("estudiante");
-    },
+    // inscripcionesNoAprobadas: async () => {
+    //   const ina = await InscriptionModel.find({ estado: 'PENDIENTE' }).populate('estudiante');
+    // },
   },
-
   Mutation: {
-    CrearInscripcion: async (parent, args) => {
-      const InscripcionCreada = await InscriptionModel.create({
-        estado: args.estado,
+    crearInscripcion: async (parent, args) => {
+      const inscripcionCreada = await InscriptionModel.create({
         proyecto: args.proyecto,
         estudiante: args.estudiante,
       });
-      return InscripcionCreada;
+      return inscripcionCreada;
     },
-
     aprobarInscripcion: async (parent, args) => {
       const inscripcionAprobada = await InscriptionModel.findByIdAndUpdate(
         args.id,
         {
-          estado: args.estado,
+          estado: "ACEPTADO",
           fechaIngreso: Date.now(),
         },
         { new: true }
@@ -40,4 +57,4 @@ const resolversIncripciones = {
   },
 };
 
-export { resolversIncripciones };
+export { resolverInscripciones };

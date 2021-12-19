@@ -18,13 +18,14 @@ const tiposEnums = gql`
   enum Enum_EstadosProyecto {
     ACTIVO
     INACTIVO
+    CREADO
   }
 
   enum Enum_FaseProyecto {
     INICIADO
     EN_DESARROLLO
     TERMINADO
-    NULA
+    NULO
   }
 
   enum Enum_TipoObjetivo {

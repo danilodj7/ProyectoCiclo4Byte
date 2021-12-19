@@ -25,7 +25,6 @@ const projectSchema = new Schema(
     nombre: {
       type: String,
       required: true,
-      unique: true,
     },
     presupuesto: {
       type: Number,
@@ -41,8 +40,8 @@ const projectSchema = new Schema(
     },
     estado: {
       type: String,
-      enum: ["ACTIVO", "INACTIVO"],
-      default: "INACTIVO",
+      enum: ["ACTIVO", "INACTIVO", "CREADO"],
+      default: "CREADO",
     },
     fase: {
       type: String,
