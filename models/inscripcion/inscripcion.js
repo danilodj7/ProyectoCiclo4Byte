@@ -45,11 +45,11 @@ const InscripcionSchema = new Schema(
   }
 );
 
-InscripcionSchema.virtual("estudiantes", {
-  ref: "Usuario",
-  localField: "_id",
-  foreignField: "estudiante",
-});
+// InscripcionSchema.virtual("estudiantes", {
+//   ref: "Usuario",
+//   localField: "_id",
+//   foreignField: "estudiante",
+// });
 
 // InscripcionSchema.virtual("avances", {
 //   ref: "Avance",

@@ -34,12 +34,22 @@ const resolversProyecto = {
           const proyectos = await ProjectModel.find({
             lider: context.userData._id,
           });
-          console.log("es lider de", proyectos);
           return proyectos;
         }
       }
       const proyectos = await ProjectModel.find();
       return proyectos;
+    },
+    ProyectosActivos: async (parent, args, context) => {
+      if (context.userData) {
+        if (context.userData.rol === "LIDER") {
+          const proyectActivos = await ProjectModel.find({
+            lider: context.userData._id,
+            estado: "ACTIVO",
+          });
+          return proyectActivos;
+        }
+      }
     },
   },
   Mutation: {
